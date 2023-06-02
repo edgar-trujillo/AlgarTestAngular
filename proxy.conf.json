@@ -1,0 +1,6 @@
+{
+    "/api/10230461490983393/search/batman": {
+      "target": "https://superheroapi.com",
+      "secure": false
+    }
+  }

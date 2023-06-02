@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    p {
+        text-align: center;
+        padding: 18px;
+        font-size: 12px;
+        margin: 0;
+    }
+    .mat-toolbar-row {
+        display: flex;
+        justify-content: center;
+    }
+}

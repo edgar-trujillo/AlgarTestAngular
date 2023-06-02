@@ -1,0 +1,9 @@
+<div class="hero-app">
+  <app-header></app-header>
+  <div class="hero-container">
+    <app-search-tab  (searchHeroName)="getSearchHeroName($event)"></app-search-tab>
+    <app-list-heroes [searchHeroes]="searchHeroes" (seeHeroDetail)="seeHeroDetail($event)"></app-list-heroes>
+    <app-dialog-overview [heroDetail]="heroDetail" (openDialogEmitter)="onDetailClose($event)"></app-dialog-overview>
+  </div>
+  <app-footer></app-footer>
+</div>

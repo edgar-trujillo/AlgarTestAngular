@@ -1,0 +1,5 @@
+<mat-form-field class="hero-full-width">
+    <mat-label>Search hero</mat-label>
+      <input matInput placeholder="Batman, Superman, Thor" (keyup)="onKey($event)">
+</mat-form-field>
+<p class="results-label" *ngIf="nameHero">Results for: <span>{{ nameHero }}</span> order by power</p>

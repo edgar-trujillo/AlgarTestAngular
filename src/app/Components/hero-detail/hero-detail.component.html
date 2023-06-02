@@ -1,0 +1,86 @@
+<div class="hero-detail">
+    <div class="main-info-detail">
+        <mat-card class="hero-detail-card">
+            <mat-card-header>
+              <mat-card-title>{{ data.hero.name }}</mat-card-title>
+              <mat-card-subtitle>{{ data.hero.biography['full-name']}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="data.hero.image.url" [alt]="data.hero.name">
+        </mat-card>
+        <mat-list>
+          <mat-list-item *ngIf="data.hero.biography.publisher">
+            <span matListItemTitle>Publisher</span>
+            <span matListItemLine>{{ data.hero.biography.publisher }}</span>
+          </mat-list-item>
+          <mat-list-item *ngIf="data.hero.appearance.gender">
+            <span matListItemTitle>Gender</span>
+            <span matListItemLine>{{ data.hero.appearance.gender }}</span>
+          </mat-list-item>
+          <mat-list-item *ngIf="data.hero.appearance.race">
+            <span matListItemTitle>Race</span>
+            <span matListItemLine>{{ data.hero.appearance.race }}</span>
+          </mat-list-item>
+          <mat-list-item *ngIf="data.hero.appearance.height">
+            <span matListItemTitle>Height</span>
+            <span matListItemLine>{{ data.hero.appearance.height[0] }}</span>
+          </mat-list-item>
+          <mat-list-item *ngIf="data.hero.appearance.weight">
+              <span matListItemTitle>Weight</span>
+              <span matListItemLine>{{ data.hero.appearance.weight[0] }}</span>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            See more characteristics
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="list-detail">
+          <mat-list>
+              <mat-list-item *ngIf="data.hero.biography['alter-egos']">
+                <span matListItemTitle>Alter egos</span>
+                <span matListItemLine>{{ data.hero.biography['alter-egos'].split(', ') }}</span>
+              </mat-list-item>
+              <mat-list-item *ngIf="data.hero.biography.alignment">
+                <span matListItemTitle>Alignment</span>
+                <span matListItemLine>{{ data.hero.biography.alignment }}</span>
+              </mat-list-item>
+              <mat-list-item *ngIf="data.hero.biography['full-name']">
+                  <span matListItemTitle>Full name</span>
+                  <span matListItemLine>{{ data.hero.biography['full-name'] }}</span>
+              </mat-list-item>
+              <mat-list-item *ngIf="data.hero.biography['first-appearance']">
+                  <span matListItemTitle>First appearance</span>
+                  <span matListItemLine>{{ data.hero.biography['first-appearance'] }}</span>
+              </mat-list-item>
+              <mat-list-item *ngIf="data.hero.biography['place-of-birth']">
+                  <span matListItemTitle>Place of birth</span>
+                  <span matListItemLine>{{ data.hero.biography['place-of-birth'] }}</span>
+              </mat-list-item>
+          </mat-list>
+          <mat-list class="hero-detail-content">
+            <mat-list-item *ngIf="data.hero.connections['group-affiliation']">
+              <span matListItemTitle>Connections</span>
+              <span matListItemLine>{{ data.hero.connections['group-affiliation'] }}</span>
+            </mat-list-item>
+            <mat-list-item *ngIf="data.hero.connections.relatives">
+                <span matListItemTitle>Relatives</span>
+                <span matListItemLine>{{ data.hero.connections.relatives }}</span>
+              </mat-list-item>
+            <mat-list-item *ngIf="data.hero.work.base">
+              <span matListItemTitle>Work base</span>
+              <span matListItemLine>{{ data.hero.work.base }}</span>
+            </mat-list-item>
+            <mat-list-item *ngIf="data.hero.work.occupation">
+                <span matListItemTitle>Occupation</span>
+                <span matListItemLine>{{ data.hero.work.occupation }}</span>
+              </mat-list-item>
+          </mat-list>
+      </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <button class="close" mat-button (click)="onCloseClick()">Close</button>
+</div>
